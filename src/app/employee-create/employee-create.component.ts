@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { EmployeeModel } from './employee-create.model';
 import { EmployeeService } from '../employee-service/employee-create.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -17,7 +17,7 @@ export class EmployeeCreateComponent implements OnInit {
   constructor(private employeeService: EmployeeService, private router: Router, private route: ActivatedRoute) { }
 
   empModel: EmployeeModel;
-  gender: String;
+  gender: String = "female";
   isNameEmpty: Boolean = false;
   minDate: Date = new Date("01/01/1970");
   maxDate: Date = new Date();

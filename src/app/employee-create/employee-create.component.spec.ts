@@ -7,6 +7,12 @@ import { FormsModule } from '@angular/forms';
 import { of } from 'rxjs';
 import { EmployeeModel } from './employee-create.model';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { Router } from '@angular/router';
+
+
+let router = {
+  navigate: jasmine.createSpy('navigate')
+}
 
 describe('EmployeeCreateComponent', () => {
   let component: EmployeeCreateComponent;
@@ -19,14 +25,16 @@ describe('EmployeeCreateComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, FormsModule, HttpClientTestingModule],
-      declarations: [EmployeeCreateComponent],
-      providers: [
-        { provide: EmployeeService, useValue: { saveEmployee() { } } }
-      ],
-      schemas: [
+      declarations: [EmployeeCreateComponent], schemas: [
         NO_ERRORS_SCHEMA
       ]
     })
+      .overrideComponent(EmployeeCreateComponent, {
+        set: {
+          providers: [
+            { provide: EmployeeService, useValue: { saveEmployee() { } } }, { provide: Router, useValue: router }],
+        },
+      })
       .compileComponents();
     fixture = TestBed.createComponent(EmployeeCreateComponent);
     component = fixture.componentInstance;
@@ -40,6 +48,10 @@ describe('EmployeeCreateComponent', () => {
     expect(component).toEqual(jasmine.any(EmployeeCreateComponent));
   });
 
+  it('After click on go back to employee button, Router navigate', () => {
+    component.goBackToEmployee();
+    expect(router.navigate).toHaveBeenCalledWith(['']);
+  })
 
 
   it('should post the data successfully', (done: DoneFn) => {
