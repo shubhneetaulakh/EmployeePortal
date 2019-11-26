@@ -1,0 +1,31 @@
+.toolbar {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar span {
+    margin-left: 42%;
+    font-size: 24px;
+  }
+
+  .marginTop {
+    margin-top: 3%;
+  }
+
+  .radioButton{
+    display: inline;
+    margin-right:20px
+  }
+  .errorMes{
+    margin-top:1%;
+    margin-left: 15px;
+    max-width: 60%;
+  }
+
+  .emptyField{
+      border-color: red;
+  }

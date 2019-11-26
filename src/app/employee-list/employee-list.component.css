@@ -1,0 +1,26 @@
+.toolbar {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar span {
+    margin-left: 42%;
+    font-size: 24px;
+  }
+
+  .marginTop {
+    margin-top: 2%;
+  }
+
+  .div_pagination {
+    float: right;
+  }
+  pagination-controls {
+    display: inline-block;
+    font-size: 14px;
+    height: 50px;
+  }
