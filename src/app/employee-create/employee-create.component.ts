@@ -19,20 +19,21 @@ export class EmployeeCreateComponent implements OnInit {
   empModel: EmployeeModel;
   gender: String;
   isNameEmpty: Boolean = false;
-   minDate: Date = new Date("01/01/1970");
-   maxDate: Date = new Date();
-   dateValue: Date;
-   date : String;
+  minDate: Date = new Date("01/01/1970");
+  maxDate: Date = new Date();
+  dateValue: Date;
+  date: String;
 
 
   addEmployee(fname, lname, dep) {
-    debugger;
     if (fname.value == "" || lname.value == "") {
       this.isNameEmpty = true;
     }
     else {
-       this.date = this.dateValue.getFullYear() + "-" + this.dateValue.getMonth() + "-" + this.dateValue.getDate();
-      this.empModel = new EmployeeModel(fname.value, lname.value, this.gender, dep.value, this.date.toString());
+      if (this.dateValue) {
+        this.date = this.dateValue.getFullYear() + "-" + this.dateValue.getMonth() + "-" + this.dateValue.getDate();
+      }
+      this.empModel = new EmployeeModel(fname.value, lname.value, this.gender, dep.value, this.date);
       this.employeeService.saveEmployee(this.empModel).subscribe((res) => {
         console.log("employee is created");
         this.router.navigate(['']);
