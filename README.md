@@ -4,10 +4,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Prerequisite
 Visual Studio code or any other IDE.
-npm install
-npm install -g @angular/cli
-npm install bootstrap --save
-npm install ngx-pagination --save
+npm install ->
+npm install -g @angular/cli -> 
+npm install bootstrap --save -> 
+npm install ngx-pagination --save    ->
 npm install @syncfusion/ej2-angular-calendars --save
 
 ## Deploy and Run
