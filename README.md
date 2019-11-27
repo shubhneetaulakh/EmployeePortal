@@ -2,6 +2,21 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
 
+## Prerequisite
+Visual Studio code or any other IDE.
+npm install
+npm install -g @angular/cli
+npm install bootstrap --save
+npm install ngx-pagination --save
+npm install @syncfusion/ej2-angular-calendars --save
+
+## Deploy and Run
+You running this project.
+Open this project in IDE.
+Run all the above commands.
+Run `ng serve`.
+open `http://localhost:4200/` in browser.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
